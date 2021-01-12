@@ -67,11 +67,11 @@ void printPositionsOfVowels(int *positionsOfVowels,int numberOfVowels)
 
 int main()
 {
-    char inputString[30];
+    char inputString[50];
     int numberOfVowels ,positionsOfVowels[20];
 
     printf("\nEnter string to count vowels\n\n");
-    fgets(inputString,100,stdin);
+    fgets(inputString,50,stdin);
 
     numberOfVowels = countNumberOfVowels( inputString, positionsOfVowels);
 
