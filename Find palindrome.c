@@ -159,7 +159,7 @@ int main()
         system("cls");
         printf("\n||||\t\t----------- ------------ ------------\t\t||||");
         printf("\n||||\t\t----------- ------------ ------------\t\t||||");
-        printf("\n\n Single digit input not allowed..:(");
+        printf("\n\n ( Single digit / Non Numeric ) input not allowed..:(");
 
         printf("\n\n||||  Try with Another number...? [y] : yes \t ");
         continue;
