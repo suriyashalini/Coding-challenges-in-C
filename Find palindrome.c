@@ -3,11 +3,11 @@
 
 long int input;
 
-int inputArray [30],numberOfDigits;
+int inputArray [30],numberOfDigits,rotation = 0;
 
 long int output;
 
-int splitNumber(long int input)
+int splitNumber()
 {
 
     long int quotian = input;
@@ -91,16 +91,23 @@ int printPalindrome()
     if(input == output)
     {
         printf("\n||||  ----------- ------------ ------------");
-        printf("\n||||\n||||  %ld is a palindrome",input);
-        printf("\n||||  ----------- ------------ ------------");
+        if(rotation == 0)
+        {
+            printf("\n||||\n||||  %ld is a palindrome",input);
+            printf("\n||||  ----------- ------------ ------------");
+        }
+
         printf("\n||||\n||||  Next biggest palindrome : %ld",output);
         printf("\n||||\n||||  ----------- ------------ ------------");
     }
     else
     {
         printf("\n||||  ----------- ------------ ------------");
-        printf("\n||||  %ld is not a palindrome",input);
-        printf("\n||||  ----------- ------------ ------------");
+        if(rotation == 0)
+        {
+            printf("\n||||  %ld is not a palindrome",input);
+            printf("\n||||  ----------- ------------ ------------");
+        }
         printf("\n||||\n||||  Next biggest palindrome : %ld",output);
         printf("\n||||\n||||  ----------- ------------ ------------");
     }
@@ -113,7 +120,7 @@ int mainMenu()
     do
     {
 
-    splitNumber(input);
+    splitNumber();
     findPalindrome();
     joinNumber();
     printPalindrome();
@@ -121,7 +128,7 @@ int mainMenu()
 
     input = output + 1;
     output = 0;
-
+    rotation++;
     }while(getch() == 'y');
 
     return 0;
@@ -148,7 +155,7 @@ int main()
 
     output = 0;
     input = 0;
-
+    rotation = 0;
     printf("\n||||  Try with Another number...? [y] : yes \t ");
 
     }while(getch() == 'y');
