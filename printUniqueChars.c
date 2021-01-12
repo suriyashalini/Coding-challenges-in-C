@@ -122,3 +122,29 @@ int main()
 
     return 0;
 }
+
+/*
+
+--SAMPLE OUTPUT--
+
+Enter string..
+
+I am new to programming
+
+Case sensitive? y : yes y
+
+I am new to programming
+^ ^^ ^^^ ^^ ^^ ^
+Unique characters..
+
+ I       a       m       n       e       w       t       o       p       r       g
+
+Number of Unique Characters : 11
+
+Positions of Unique characters..
+
+ 1       3       4       6       7       8       10      11      13      14      16
+
+*/
+
+
