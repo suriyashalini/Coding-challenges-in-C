@@ -1,4 +1,4 @@
-//With case sensitive
+//Added case sensitivity
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@ int checkIfAlphabet(char letter)
         return 0;
 }
 
-int checkInUniqueArray(char letter,char *uniqCharsArray,int numberOfUniqChars)
+int checkInUniqueArray(char isCaseSensitive, char letter,char *uniqCharsArray,int numberOfUniqChars)
 {
     for(int index = 0; index < numberOfUniqChars; index++)
     {
@@ -21,17 +21,26 @@ int checkInUniqueArray(char letter,char *uniqCharsArray,int numberOfUniqChars)
             {
                     return 0;
             }
+
+            if(isCaseSensitive == 'y')
+            {
+                if(checkIfAlphabet(letter) && ( (letter == (uniqCharsArray[index] + 32) ) || (letter == (uniqCharsArray[index] - 32) ) ) )
+                {
+                    return 0;
+                }
+            }
+
     }
     return 1;
 }
 
-int countNumberOfUniqChars (char* inputString,char* uniqCharsArray,int* positionsOfUniqChars)
+int countNumberOfUniqChars (char isCaseSensitive,char* inputString,char* uniqCharsArray,int* positionsOfUniqChars)
 {
     int numberOfUniqChars = 0;
 
     for(int index = 0; inputString[index]; index++)
     {
-        if( checkIfAlphabet( inputString[index] ) && checkInUniqueArray(inputString[index], uniqCharsArray, numberOfUniqChars) )
+        if( checkIfAlphabet( inputString[index] ) && checkInUniqueArray(isCaseSensitive, inputString[index], uniqCharsArray, numberOfUniqChars) )
         {
             uniqCharsArray[numberOfUniqChars] = inputString[index];
 
@@ -89,14 +98,19 @@ void  printUniqChars(char *uniqCharsArray, int numberOfUniqChars)
 
 int main()
 {
-    char inputString[50],uniqCharsArray[26];
+    char inputString[50],uniqCharsArray[26],isCaseSensitive;
     int numberOfUniqChars ,positionsOfUniqChars[20];
 
     printf("\nEnter string..\n\n");
     fgets(inputString,50,stdin);
 
-    numberOfUniqChars = countNumberOfUniqChars (inputString, uniqCharsArray, positionsOfUniqChars);
+    printf("\nCase sensitive? y : yes\t");
 
+    isCaseSensitive = getchar();
+
+    numberOfUniqChars = countNumberOfUniqChars (isCaseSensitive,inputString, uniqCharsArray, positionsOfUniqChars);
+
+    printf("\n%s",inputString);
     printArrows(inputString,positionsOfUniqChars,numberOfUniqChars);
 
     printUniqChars(uniqCharsArray,numberOfUniqChars);
