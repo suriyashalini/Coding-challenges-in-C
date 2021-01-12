@@ -1,1 +1,1 @@
-# Calendar-in-C
+# Coding-Challenges-in-C
