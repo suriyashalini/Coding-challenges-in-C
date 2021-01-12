@@ -86,3 +86,26 @@ int main()
 
     return 0;
 }
+
+/*
+  --SAMPLE OUTPUT--
+  Enter string to count vowels
+
+  I love coding, By Edward
+
+  Number of vowels : 7
+
+  Positions of vowels..
+  1
+  4
+  6
+  9
+  11
+  19
+  22
+
+  I love coding, By Edward
+  ^  ^ ^  ^ ^       ^  ^
+                            */
+
+
