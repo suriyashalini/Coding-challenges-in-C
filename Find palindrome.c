@@ -1,5 +1,9 @@
+
+//Entering NON Numerical values as input may cause unexpected behaviours
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 long int input;
 
@@ -94,11 +98,12 @@ int printPalindrome()
         if(rotation == 0)
         {
             printf("\n||||\n||||  %ld is a palindrome",input);
-            printf("\n||||  ----------- ------------ ------------");
+            printf("\n||||\n||||  ----------- ------------ ------------");
+            return 0;
+
+
         }
 
-        printf("\n||||\n||||  Next biggest palindrome : %ld",output);
-        printf("\n||||\n||||  ----------- ------------ ------------");
     }
     else
     {
@@ -149,14 +154,33 @@ int main()
 
     while( (getchar() != '\n') );
 
+    if(input <= 9)
+    {
+        system("cls");
+        printf("\n||||\t\t----------- ------------ ------------\t\t||||");
+        printf("\n||||\t\t----------- ------------ ------------\t\t||||");
+        printf("\n\n Single digit input not allowed..:(");
 
-    mainMenu();
+        printf("\n\n||||  Try with Another number...? [y] : yes \t ");
+        continue;
+
+
+    }
+    else
+    {
+         mainMenu();
+    }
+
 
 
     output = 0;
     input = 0;
     rotation = 0;
-    printf("\n||||  Try with Another number...? [y] : yes \t ");
+
+    system("cls");
+    printf("\n||||\t\t----------- ------------ ------------\t\t||||");
+    printf("\n||||\t\t----------- ------------ ------------\t\t||||");
+    printf("\n\n||||  Try with Another number...? [y] : yes \t ");
 
     }while(getch() == 'y');
 
