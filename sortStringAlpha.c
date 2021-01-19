@@ -35,7 +35,7 @@ void sortString(char* inputString1, char* inputString2, char* sortedString)
 
         }
     }
-
+    sortedString[sortedIndex] = '\0';
 }
 
 
