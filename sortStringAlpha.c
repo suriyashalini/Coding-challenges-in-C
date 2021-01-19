@@ -49,6 +49,5 @@ int main()
    gets(inputString2);
 
    sortString(inputString1,inputString2, sortedString);
-   printf("\nSorted Array\n %s",sortedString);
-
+   printf("\nSort
 }
